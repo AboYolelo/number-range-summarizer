@@ -25,15 +25,15 @@ Java 8 features used: streams, `Collectors.joining`, lambdas and method referenc
 
 ## Assumptions
 
-Each assumption is pinned down by a test (see the `assumption_*` tests in `RangeSummarizerTest`).
+Each assumption is pinned down by a test.
 
-1. Output is sorted ascending, whatever the input order.
+1. Output is sorted in ascending order.
 2. Duplicates are collapsed (`1,1,2` is treated as `1,2`).
-3. "Sequential" means consecutive integers (each exactly 1 more than the previous).
+3. This list consists of consecutive integers, thus sequential.
 4. A range needs at least 3 numbers: `1,2` stays `1, 2`; `1,2,3` becomes `1-3`. Configurable via `new RangeFormatter(2)`.
-5. Negative numbers and zero are valid.
+5. Negative numbers and zero are valid (since this is a list of all **Integers**).
 6. Whitespace is ignored, and empty entries (`1,,2` or a trailing comma) are skipped.
-7. Null or blank input gives an empty collection / empty string, not an error.
+7. Null or blank input gives an empty string, not an error.
 8. Null elements inside a collection are ignored.
 9. A non-integer entry (`abc`, `2.5`, or a number too big for `int`) throws `IllegalArgumentException`.
 10. `collect()` only parses (keeps input order and duplicates); normalising happens in `summarizeCollection()`.
