@@ -4,11 +4,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Renders ranges as text, e.g. [1], [3], [6-8] as "1, 3, 6-8".
- * A range is only written as "start-end" when it holds at least {@code minRangeLength}
- * numbers; shorter runs are written as individual numbers.
- */
+
 public class RangeFormatter {
 
     public static final int DEFAULT_MIN_RANGE_LENGTH = 3;
