@@ -8,10 +8,7 @@ import java.util.Collection;
 import java.util.Collections;
 import org.junit.Test;
 
-/**
- * End to end tests of the provided interface. The "assumption" tests document every
- * interpretation of the requirement made in {@link RangeSummarizer}.
- */
+
 public class RangeSummarizerTest {
 
     private final NumberRangeSummarizer summarizer = new RangeSummarizer();
